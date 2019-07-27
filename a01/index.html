@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.js</title>
+</head>
+<body>
+
+  <h1>Vue.js</h1>
+  <h2>My first app! =)</h2>
+  <h3 id="someText">My name is {{nome}}!</h3>
+
+  <script src="./vue.js"></script>
+  <script>
+    // Instanciando o Vue.js
+    const vm = new Vue({
+      // Selecionando o elemento
+      el: "#someText",
+      // Dados do componente
+      data: {
+        nome: "Felipe"
+      }  
+    });
+
+    // Exemplo da reatividade com mudança de estado
+    setTimeout(() => {
+      vm.nome = "Tiririca"
+    }, 3000);
+  </script>
+
+</body>
+</html>
