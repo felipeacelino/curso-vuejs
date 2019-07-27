@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 05 - Data - Exercícios</title>
+  <script src="../vuejs/vue.js"></script>
+</head>
+<body>
+  <!-- Acerte o código abaixo -->
+  <div id="app">
+    {{empresa}}, {{produto}}
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        empresa: "Apple",
+        produto: "Iphone"
+      }
+    });
+  </script>
+
+  <!-- Crie uma instância que mostre baseado no valor do lado do quadrado o seu perímetro (Lx4) e área (LxL). O lado do quadrado deve ser um estado reativo -->
+  <div id="app2">
+    <p>Informe a medida do lado do quadrado: <input type="text" v-model="lado"></p>
+    <p>O lado do quadrado é {{lado}}</p>
+    <p>O perímetro do quadrado é {{lado * 4}}</p>
+    <p>A área do quadrado é {{lado * lado}}</p>
+  </div>
+  <script>
+    const vm2 = new Vue({
+      el: "#app2",
+      data: {
+        lado: 0
+      }
+    })
+  </script>
+</body>
+</html>
