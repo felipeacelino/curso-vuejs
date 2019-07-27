@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>View.js - Aula 03 - Diretivas</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    p {
+      margin-top: 0;
+    }
+    #app {
+      width: 100%; height: 100vh; background-color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" v-bind:style="{backgroundColor: color}">
+    <p>Selecione uma cor: <input type="color" v-model="color"></p>
+    <p>A cor selecionada é <b>{{color}}</b></p>
+    <div v-if="color === '#FF0000'">
+      <p>A cor é vermelha</p>
+    </div>
+    <p>{{color === '#000000' ? 'A cor é preta' : 'A cor não é preta'}}</p>
+  </div>
+  <script src="../vuejs/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        color: "#FFFFFF"
+      }
+    });
+  </script>
+</body>
+</html>
