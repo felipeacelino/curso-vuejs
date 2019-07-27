@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 06 - Métodos - Exercícios</title>
+  <script src="../vuejs/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Buscar Endereço</h1>
+    <p>Informe o CEP: <input type="text" v-model="endereco.cep"> <button @click="buscarEndereco">Buscar</button></p>
+    <p>Cep: {{endereco.cep}}</p>
+    <p>Rua/Av.: {{endereco.logradouro}}</p>
+    <p>Bairro: {{endereco.bairro}}</p>
+    <p>Cidade: {{endereco.localidade}}</p>
+    <p>Estado: {{endereco.uf}}</p>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        endereco: {
+          cep: ""
+        }
+      },
+      methods: {
+        buscarEndereco() {
+          fetch("https://viacep.com.br/ws/"+ this.endereco.cep + "/json/")
+            .then(resp => resp.json())
+            .then(json => {
+              this.endereco = json;
+            })
+            .catch(error => console.error("CEP inválido!"));
+        }
+      }
+    })
+  </script>
+</body>
+</html>
