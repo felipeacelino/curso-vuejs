@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 04 - Instância - Exercícios</title>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="app1">{{ferramenta}}</div>
+  <div id="app2">{{instrumento}}</div>
+  <script src="../vuejs/vue.js"></script>
+  <script>
+  // 1 - Crie uma tag com o ID app e inicie uma instância do Vue
+  const vm = new Vue({
+    el: "#app"
+  });
+  // 2 - Faça o HTML abaixo funcionar com Vue
+  const app1 = new Vue({
+    el: "#app1",
+    data: {
+      ferramenta: "Martelo"
+    }
+  });
+  const app2 = new Vue({
+    el: "#app2",
+    data: {
+      instrumento: "Violão"
+    }
+  });
+  </script>
+</body>
+</html>
