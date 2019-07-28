@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UT F-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 11 - v-for - Exercícios</title>
+  <script src="../vuejs/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Cursos</h1>
+    <p><button @click="getCursos">Listar Cursos</button></p>
+    <ul>
+      <li v-for="(curso, idCurso) in cursos" :key="'c-'+idCurso">
+        <a :href="curso.link">
+          <h3>{{curso.curso}}</h3>
+        </a>
+        <ul>
+          <li v-for="(aula, idAula) in curso.aulas" :key="'a-'+idAula">
+            <b>{{aula.nome}}</b> - {{aula.tempo}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        cursos: []
+      },
+      methods: {
+        getCursos() {
+          fetch("cursos.json")
+            .then(resp => resp.json())
+            .then(json => this.cursos = json);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
