@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UT F-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 09 - v-if - Exercícios</title>
+  <script src="../vuejs/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <p><b>Produto:</b> {{produto.titulo}}</p>
+      <p><b>Valor:</b> R$ {{produto.preco}}</p>
+      <p><b>Estoque:</b> {{produto.estoque}}</p>
+      <template v-if="carrinho.quantidade<produto.estoque">
+        <p>
+          <button @click="addToCart">Adicionar ao carrinho</button>
+        </p>
+      </template>
+      <template v-else>
+        <p style="color: red" >Adicione no máximo <b>{{produto.estoque}}</b> itens!</p>
+      </template>
+    </div>
+    <hr>
+    <div>
+      <p><b>Carrinho</b></p>
+      <p><b>Quantidade:</b> {{carrinho.quantidade}}</p>
+      <p><b>Total:</b> R$ {{carrinho.total}}</p>
+      <p v-show="carrinho.quantidade > 0">
+        <button @click="remFromCart">Remover do carrinho</button>
+      </p>
+    </div>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        produto: {
+          titulo: "Days Gone - PS4",
+          preco: 150,
+          estoque: 7
+        },
+        carrinho: {
+          quantidade: 0,
+          total: 0
+        }
+      },
+      methods: {
+        addToCart() {
+          if (this.carrinho.quantidade < this.produto.estoque) {
+            this.carrinho.quantidade++;
+            this.calcCart();
+          }
+        },
+        remFromCart() {
+          if (this.carrinho.quantidade > 0) {
+            this.carrinho.quantidade--;
+            this.calcCart();
+          }
+        },
+        calcCart() {
+          this.carrinho.total = this.carrinho.quantidade * this.produto.preco;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
