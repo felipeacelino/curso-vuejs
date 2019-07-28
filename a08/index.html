@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UT F-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 08 - ??? - Exercícios</title>
+  <script src="../vuejs/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li><a href="https://cloud.iexapis.com/stable/stock/aapl/quote?token=" @click.prevent="fetchDados">Apple</a></li>
+      <li><a href="https://cloud.iexapis.com/stable/stock/googl/quote?token=" @click.prevent="fetchDados">Google</a></li>
+      <li><a href="https://cloud.iexapis.com/stable/stock/amzn/quote?token=" @click.prevent="fetchDados">Amazon</a></li>
+      <li><a href="https://cloud.iexapis.com/stable/stock/ebay/quote?token=" @click.prevent="fetchDados">Ebay</a></li>
+      <li><a href="https://cloud.iexapis.com/stable/stock/pypl/quote?token=" @click.prevent="fetchDados">Paypal</a></li>
+    </ul>
+    <div>
+      <p><b>companyName:</b> {{empresa.companyName}}</p>
+      <p><b>latestPrice:</b> {{empresa.latestPrice}}</p>
+      <p><b>marketCap:</b> {{empresa.marketCap}}</p>
+    </div>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        token: "pk_d210e5636a344c0ca646d5b6f9ab9631",
+        empresa: {}
+      },
+      methods: {
+        fetchDados(event) {
+          const url = event.currentTarget.href + this.token;
+          fetch(url)
+            .then(resp => resp.json())
+            .then(json => {
+              this.empresa = json;
+            });
+        }
+      }
+    });
+  </script>
+  </body>
+  </html>
