@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UT F-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 12 - Computed e Watch - Exercícios</title>
+  <script src="../vuejs/vue.js"></script>
+</head>
+<body>
+  <!-- Exercício 1 -->
+  <div id="app">
+    <b>Nome Completo:</b> {{nomeCompleto}}
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        nome: "Felipe",
+        sobrenome: "Acelino"
+      },
+      computed: {
+        nomeCompleto() {
+          return this.nome + ' ' + this.sobrenome;
+        }
+      }
+    });
+  </script>
+
+  <!-- Exercício 2 -->
+  <div id="app2">
+    {{getPaises()}}
+    <p>
+      <b>Selecione um páis</b>
+      <select v-model="selecionado">
+        <option value="" hidden>Selecione</option>
+        <option v-for="pais in paises" :value="pais.name">{{pais.name}}</option>
+      </select>
+    </p>
+    <p>
+      <b>Capital:</b> {{capital}}
+    </p>
+  </div>
+  <script>
+    const vm2 = new Vue({
+      el: "#app2",
+      data: {
+        paises: [],
+        selecionado: "",
+        capital: ""
+      },
+      methods: {
+        getPaises() {
+          fetch("https://restcountries.eu/rest/v2/all")
+            .then(resp => resp.json())
+            .then(json => this.paises = json);
+        }
+      },
+      watch: {
+        selecionado(pais) {
+          this.capital = this.paises.find(({name}) => name === pais)['capital'];
+        }
+      }
+    })
+  </script>
+</body>
+</html>
