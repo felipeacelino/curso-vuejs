@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UT F-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 15 - Diretivas e Hooks - Exercícios</title>
+  <script src="../vuejs/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-for="(value, key) in githubData">
+      <b>{{key}}:</b> {{value}}
+    </p>
+    <button @click="contador++">Contador {{contador}}</button>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        githubData: {},
+        contador: 0
+      },
+      created() {
+        fetch("https://api.github.com/users/felipeacelino")
+          .then(resp => resp.json())
+          .then(json => this.githubData = json);
+      },
+      updated() {
+        document.title = this.contador
+        ;
+      }
+    });
+  </script>
+</body>
+</html>
