@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UT F-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 13 - Class e Style - Exercícios</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="../vuejs/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button class @click="singleColumn = 
+    !singleColumn" v-html="btnHtml"></button>
+    <ul :class="{ column: singleColumn }" @click="changeColor">
+      <li :style="{ backgroundColor: color }">Sobre</li>
+      <li :style="{ backgroundColor: color }">Produtos</li>
+      <li :style="{ backgroundColor: color }">Serviços</li>
+      <li :style="{ backgroundColor: color }">Contato</li>
+    </ul> 
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        singleColumn: false,
+        color: "",
+        btnHtml: "<i class='fas fa-bars'></i>"
+      },
+      methods: {
+        changeColor() {
+          this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        }
+      },
+      watch: {
+        singleColumn() {
+          this.btnHtml = this.singleColumn ? "<i class='fas fa-th'></i>" : "<i class='fas fa-bars'></i>";
+        }
+      }
+    })
+  </script>
+  
+  <style>
+    button {
+      display: block;
+      margin: 0 auto;
+      font-size: 1.5em;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      font-family: monospace;
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+    }
+    .column {
+      flex-direction: column;
+    }
+    li {
+      padding: 20px;
+      background: #84e;
+      color: white;
+      border-radius: 4px;
+      margin: 10px;
+      flex: 1;
+      text-align: center;
+    }
+  </style>
+</body>
+</html>
