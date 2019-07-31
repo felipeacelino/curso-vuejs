@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UT F-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 14 - v-model - Exercícios</title>
+  <script src="../vuejs/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h2>Button Generator</h2>
+    <form>
+      <label>width: <input type="text" v-model="styleButton.width"></label>
+      <label>height: <input type="text" v-model="styleButton.height"></label>
+      <label>font-size: <input type="text" v-model="styleButton.fontSize"></label>
+      <label>font-family: <input type="text" v-model="styleButton.fontFamily"></label>
+      <label>text-align: <input type="text" v-model="styleButton.textAlign"></label>
+      <label>background: <input type="text" v-model="styleButton.backgroundColor"></label>
+      <label>color: <input type="text" v-model="styleButton.color"></label>
+      <label>border-radius: <input type="text" v-model="styleButton.borderRadius"></label>
+    </form>
+    <button :style="styleButton">Clique Aqui</button>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        styleButton: {}
+      }
+    })
+  </script>
+
+  <div id="app2">
+    <h2>Formulário</h2>
+    <form>
+      <label>Nome: <input type="text" v-model="nome"></label>
+      <label>E-mail: <input type="email" v-model="email"></label>
+      <label>Telefone: <input type="number" v-model="telefone"></label>
+      <label>Mensagem: <textarea v-model="mensagem"></textarea></label>
+      <button @click.prevent="exibe = true">Enviar</button>
+    </form>
+    <div v-show="exibe">
+      <p><b>Nome:</b> {{nome}}</p>
+      <p><b>E-mail:</b> {{email}}</p>
+      <p><b>Telefone:</b> {{telefone}}</p>
+      <p><b>Mensagem:</b> {{mensagem}}</p>
+    </div>
+  </div>
+
+  <script>
+    const vm2 = new Vue({
+      el: "#app2",
+      data: {
+        exibe: false,
+        nome: "",
+        email: "",
+        telefone: "",
+        mensagem: ""
+      }
+    })
+  </script>
+  
+  <style>
+    form {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</body>
+</html>
