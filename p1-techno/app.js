@@ -3,7 +3,9 @@ const vm = new Vue({
   data: {
     produtos: [],
     produto: false,
-    carrinho: []
+    carrinho: [],
+    mensagemAlerta: "Item adicionado",
+    alertaAtivo: false
   },
   filters: {
     numeroPreco(valor) {
@@ -40,12 +42,21 @@ const vm = new Vue({
       this.produto.estoque--;
       const { id, nome, preco } = this.produto;
       this.carrinho.push({ id, nome, preco });
+      this.alerta(`${nome} adicionado ao carrinho.`);
     },
     removerItem(id) {
       this.carrinho.splice(id, 1);
+      this.alerta("Item removido do carrinho.");
     },
     checarLocalStorage() {
       if (window.localStorage.carrinho) this.carrinho = JSON.parse(window.localStorage.carrinho);
+    },
+    alerta(mensagem) {
+      this.mensagemAlerta = mensagem;
+      this.alertaAtivo = true;
+      setTimeout(() => {
+        this.alertaAtivo = false;
+      }, 1500);
     }
   },
   watch: {
