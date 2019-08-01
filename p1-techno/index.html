@@ -21,7 +21,7 @@
     <div class="produtos">
       <div v-for="item in produtos" @click="abrirModal(item.id)" :key="item.id" class="produto">
         <img :src="item.img" :alt="item.nome" class="produto_img" />
-        <div>
+        <div class="produto_info">
           <span class="produto_preco">{{item.preco | numeroPreco}}</span>
           <h2 class="produto_titulo">{{item.nome}}</h2>
         </div>
