@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UT F-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 16 - Componentes - Exercícios</title>
+  <script src="../vuejs/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <previsao-tempo></previsao-tempo>
+    <hr>
+    <acao-apple></acao-apple>
+  </div>
+
+  <script type="module">
+    import PrevisaoTempo from "./components/PrevisaoTempo.js";
+    import AcaoApple from "./components/AcaoApple.js";
+
+    Vue.component("PrevisaoTempo", PrevisaoTempo);
+
+    const vm = new Vue({
+      el: "#app",
+      components: {
+        AcaoApple
+      }
+    });
+  </script>
+</body>
+</html>
