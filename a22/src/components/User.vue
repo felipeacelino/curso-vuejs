@@ -5,6 +5,7 @@
       <li>Email: {{email}}</li>
       <li>Birthday: {{birthday}}</li>
     </ul>
+    <button @click="handleClick">Alterar e-mail</button>
   </div>
 </template>
 
@@ -23,6 +24,11 @@ export default {
     ...mapState(["email", "birthday"]),
     fullName() {
       return `${this.name} ${this.lastName}`;
+    }
+  },
+  methods: {
+    handleClick() {
+      this.$store.commit("changeEmail");
     }
   }
 };
