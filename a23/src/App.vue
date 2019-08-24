@@ -6,6 +6,14 @@
     <input type="text" v-model="cep" />
     <button @click="handleClick">Buscar Endereço</button>
     <p>{{$store.state.endereco}}</p>
+    <p v-if="$store.state.endereco">
+      <b>Cidade:</b>
+      {{$store.getters.cidadeUf}}
+    </p>
+    <p v-if="$store.state.endereco">
+      <b>Cidade ou Estado:</b>
+      {{$store.getters.cidadeOrUf("uf")}}
+    </p>
   </div>
 </template>
 

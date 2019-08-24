@@ -8,6 +8,12 @@ export default new Vuex.Store({
     aulasCompletas: [],
     endereco: null
   },
+  getters: {
+    cidadeUf(state) {
+      return `${state.endereco.localidade} / ${state.endereco.uf}`;
+    },
+    cidadeOrUf: (state) => (option) => option === "uf" ? state.endereco.uf : state.endereco.localidade
+  },
   mutations: {
     COMPLETAR_AULA(state, payload) {
       if (state.aulasCompletas.indexOf(payload) === -1) state.aulasCompletas.push(payload);
