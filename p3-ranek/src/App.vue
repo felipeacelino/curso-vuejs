@@ -2,7 +2,9 @@
   <div id="app">
     <TheHeader />
     <main id="main">
-      <router-view />
+      <transition mode="out-in">
+        <router-view />
+      </transition>
     </main>
     <TheFooter />
   </div>
@@ -83,6 +85,10 @@ img {
   flex: 1;
 }
 
+label {
+  margin-bottom: 5px;
+}
+
 input,
 textarea {
   border-radius: 4px;
@@ -101,7 +107,6 @@ textarea:focus {
   outline: none;
   box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
   border-color: #87f;
-  transform: scale(1.1);
 }
 
 .v-enter,
