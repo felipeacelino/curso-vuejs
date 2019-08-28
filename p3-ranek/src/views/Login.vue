@@ -7,11 +7,11 @@
       <label for="senha">Senha</label>
       <input type="password" name="senha" id="senha" v-model="login.senha" />
       <button class="btn" @click.prevent="logar">Logar</button>
-      <p class="perdeu">
-        <a href="/" target="_blank">Perdeu a senha? Clique aqui.</a>
-      </p>
-      <LoginCriar />
     </form>
+    <p class="perdeu">
+      <a href="/" target="_blank">Perdeu a senha? Clique aqui.</a>
+    </p>
+    <LoginCriar />
   </section>
 </template>
 
