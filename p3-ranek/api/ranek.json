@@ -8,8 +8,21 @@
       "rua": "Rua Ali Perto",
       "cep": "12345678",
       "numero": "25",
+      "bairro": "Copacabana",
       "estado": "RJ",
       "cidade": "Rio de Janeiro"
+    },
+    {
+      "id": "felipeacelino@hotmail.com",
+      "email": "felipeacelino@hotmail.com",
+      "nome": "Felipe Acelino",
+      "senha": "123456",
+      "rua": "Rua das Freiras Sapecas",
+      "cep": "07143650",
+      "numero": "150",
+      "bairro": "Taboão",
+      "estado": "SP",
+      "cidade": "Guarulhos"
     }
   ],
   "produto": [
