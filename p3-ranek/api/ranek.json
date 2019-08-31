@@ -23,6 +23,30 @@
       "bairro": "Taboão",
       "estado": "SP",
       "cidade": "Guarulhos"
+    },
+    {
+      "id": "joao@email.com",
+      "nome": "Joao",
+      "email": "joao@email.com",
+      "senha": "123456",
+      "cep": "07143650",
+      "rua": "Avenida Três Corações",
+      "numero": "150",
+      "bairro": "Jardim Paraíso",
+      "cidade": "Guarulhos",
+      "estado": "SP"
+    },
+    {
+      "id": "bea@email.com",
+      "nome": "Beatriz",
+      "email": "bea@email.com",
+      "senha": "123456",
+      "cep": "07141080",
+      "rua": "Rua Trajano de Faria",
+      "numero": "108",
+      "bairro": "Jardim Nova Taboão",
+      "cidade": "Guarulhos",
+      "estado": "SP"
     }
   ],
   "produto": [
