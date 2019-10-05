@@ -14,15 +14,15 @@
     },
     {
       "id": "felipeacelino@hotmail.com",
+      "nome": "Felipe Acelino da Silva",
       "email": "felipeacelino@hotmail.com",
-      "nome": "Felipe Acelino",
       "senha": "123456",
-      "rua": "Rua das Freiras Sapecas",
       "cep": "07143650",
-      "numero": "150",
+      "rua": "Rua das Freiras Sapecas",
+      "numero": "216",
       "bairro": "Taboão",
-      "estado": "SP",
-      "cidade": "Guarulhos"
+      "cidade": "Guarulhos",
+      "estado": "SP"
     },
     {
       "id": "joao@email.com",
