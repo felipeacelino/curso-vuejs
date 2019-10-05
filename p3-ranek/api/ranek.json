@@ -3505,6 +3505,14 @@
       "vendido": "false",
       "descricao": "Esse é um novo tablet.",
       "fotos": null
+    },
+    {
+      "nome": "Iphone X",
+      "preco": "5000",
+      "descricao": "Iphone X  usado",
+      "fotos": null,
+      "usuario_id": "felipeacelino@hotmail.com",
+      "id": "CvdYVYd"
     }
   ]
 }
