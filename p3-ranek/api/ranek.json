@@ -1,4 +1,72 @@
 {
+  "transacao": [
+    {
+      "comprador_id": "felipeacelino@hotmail.com",
+      "vendedor_id": "andre@origamid.com",
+      "produto": {
+        "id": "notebook",
+        "nome": "Notebook",
+        "usuario_id": "andre@origamid.com",
+        "preco": "4999",
+        "vendido": "false",
+        "descricao": "Esse é um novo notebook.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "07143650",
+        "rua": "Rua das Freiras Sapecas",
+        "numero": "216",
+        "bairro": "Taboão",
+        "cidade": "Guarulhos",
+        "estado": "SP"
+      },
+      "id": 1
+    },
+    {
+      "comprador_id": "felipeacelino@hotmail.com",
+      "vendedor_id": "andre@origamid.com",
+      "produto": {
+        "id": "smartphone",
+        "nome": "Smartphone",
+        "usuario_id": "andre@origamid.com",
+        "preco": "1999",
+        "vendido": "false",
+        "descricao": "Esse é um novo smartphone.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "07143650",
+        "rua": "Rua das Freiras Sapecas",
+        "numero": "216",
+        "bairro": "Taboão",
+        "cidade": "Guarulhos",
+        "estado": "SP"
+      },
+      "id": 2
+    },
+    {
+      "comprador_id": "teste@teste.com",
+      "vendedor_id": "andre@origamid.com",
+      "produto": {
+        "id": "tablet",
+        "nome": "Tablet",
+        "usuario_id": "andre@origamid.com",
+        "preco": "1399",
+        "vendido": "false",
+        "descricao": "Esse é um novo tablet.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "07141080",
+        "rua": "Rua Trajano de Faria",
+        "numero": "666",
+        "bairro": "Jardim Nova Taboão",
+        "cidade": "Guarulhos",
+        "estado": "SP"
+      },
+      "id": 3
+    }
+  ],
   "usuario": [
     {
       "id": "andre@origamid.com",
@@ -44,6 +112,18 @@
       "cep": "07141080",
       "rua": "Rua Trajano de Faria",
       "numero": "108",
+      "bairro": "Jardim Nova Taboão",
+      "cidade": "Guarulhos",
+      "estado": "SP"
+    },
+    {
+      "id": "teste@teste.com",
+      "nome": "Fulano",
+      "email": "teste@teste.com",
+      "senha": "123456",
+      "cep": "07141080",
+      "rua": "Rua Trajano de Faria",
+      "numero": "666",
       "bairro": "Jardim Nova Taboão",
       "cidade": "Guarulhos",
       "estado": "SP"
